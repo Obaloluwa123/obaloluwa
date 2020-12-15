@@ -36,10 +36,10 @@ public class MainActivity extends AppCompatActivity {
       items.add("Go to the gym");
       items.add("Have fun!");
 
-        itemsAdapter ItemsAdapter = new itemsAdapter(items);
-        rvitems.setAdapter(ItemsAdapter);
+        final itemsAdapter itemsAdapter = new itemsAdapter(items);
+        rvitems.setAdapter(itemsAdapter);
         rvitems.setLayoutManager(new LinearLayoutManager(this));
-
+`
         btnAdd.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -47,7 +47,7 @@ public class MainActivity extends AppCompatActivity {
                 // Add item to the model
                 items.add(todoitem);
                 //Notify adapter that an item is inserted
-                ItemsAdapter.notifyItemInserted(items.size() - 1);
+                itemsAdapter.notifyItemInserted(items.size() - 1);
                 etitem.setText("");
             }
         });
