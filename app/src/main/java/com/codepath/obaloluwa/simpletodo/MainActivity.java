@@ -10,6 +10,8 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import java.io.File;
+import java.nio.charset.Charset;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -21,6 +23,7 @@ public class MainActivity extends AppCompatActivity {
     EditText etitem;
     RecyclerView rvitems;
     itemsAdapter itemsAdapter;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -67,4 +70,13 @@ public class MainActivity extends AppCompatActivity {
             }
         });
     }
+    private File getDataFile() {
+        return new File(getFilesDir(), "data.txt");
+    }
+
+    // This function will load items by reading every line of the data file
+    private void loadItems() {
+        items = new ArrayList<>(FileUtils.readLines(getDataFile(), Charset.defaultCharset());
+    }
+    // This function saves items by writing them into the data file
 }
