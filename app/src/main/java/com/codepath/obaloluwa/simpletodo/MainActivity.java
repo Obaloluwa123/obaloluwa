@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import org.apache.commons.io.FileUtils;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -80,17 +81,17 @@ public class MainActivity extends AppCompatActivity {
     // This function will load items by reading every line of the data file
     private void loadItems() {
       try {
-        items = new ArrayList<>(FileUtils.readLines(getDataFile(), Charset.defaultCharset());
+        items = new ArrayList<>(FileUtils.readLines(getDataFile(), Charset.defaultCharset();
     }   catch (IOException e) {
           Log.e("MainActivity", "Error reading items", e);
           items = new ArrayList<>();
       }
     // This function saves items by writing them into the data file
-        private void saveItems()  {
+        private void saveItems();  {
           try {
           FileUtils.writeLines(getDataFile(), items);
         }   catch (IOException e) {
               Log.e("MainActivity", "Error writing items", e);
           }
         }
-}
+
