@@ -39,10 +39,6 @@ public class MainActivity extends AppCompatActivity {
         rvitems = findViewById(R.id.rvitems);
 
         loadItems();
-        items = new ArrayList<>();
-        items.add("Buy Milk");
-        items.add("Go to the gym");
-        items.add("Have fun!");
 
         itemsAdapter.OnLongClickListener onLongClickListener = new itemsAdapter.OnLongClickListener() {
             @Override
@@ -76,8 +72,7 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
-    private File getDataFile() {
-        return new File(getFilesDir(), "data.txt");
+    private File getDataFile() { return new File(getFilesDir(), "data.txt");
     }
 
     // This function will load items by reading every line of the data file
